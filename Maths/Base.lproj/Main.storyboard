@@ -11,19 +11,19 @@
         <!--Start Screen-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="StartScreen" customModule="Maths" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="StartScreen" customModule="Maths" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wybierz tryb" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XL8-gG-Sam">
-                                <rect key="frame" x="60" y="107" width="200" height="39"/>
+                                <rect key="frame" x="60" y="117" width="200" height="39"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="32"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BCC-z1-Va2">
-                                <rect key="frame" x="92" y="206" width="136" height="136"/>
+                                <rect key="frame" x="92" y="216" width="136" height="136"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbf-GU-jaf">
                                         <rect key="frame" x="0.0" y="72" width="64" height="64"/>
@@ -207,38 +207,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6e3-OC-030">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6e3-OC-030">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences" minimumFontSize="23"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cfk-4f-rbd">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
-                                <items>
-                                    <navigationItem title="Wyniki" id="uAd-fp-XVl">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="M2C-0u-FjS">
-                                            <connections>
-                                                <action selector="sendEmail:" destination="PPQ-J6-ssc" id="uaP-OS-gO0"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="aYe-aj-CrG">
-                                            <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" identifier="backToStart" id="nmI-cs-Ogj"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6o2-Z8-IBn">
+                                <rect key="frame" x="266" y="494" width="46" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="4EX-CE-1M0"/>
+                                    <constraint firstAttribute="height" constant="46" id="mxf-ZS-pPQ"/>
+                                </constraints>
+                                <state key="normal" image="square.and.arrow.up.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="26"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendEmailAct:" destination="PPQ-J6-ssc" eventType="touchUpInside" id="jbq-ce-A0w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pu-dg-EAd">
+                                <rect key="frame" x="266" y="440" width="46" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="42N-pp-c14"/>
+                                    <constraint firstAttribute="height" constant="46" id="nmc-KK-gib"/>
+                                </constraints>
+                                <state key="normal" image="arrow.clockwise" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="26"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="e1n-Ja-pEl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6e3-OC-030" firstAttribute="trailing" secondItem="LM4-sj-PyR" secondAttribute="trailingMargin" id="17m-bc-Ak0"/>
-                            <constraint firstItem="6e3-OC-030" firstAttribute="bottom" secondItem="LM4-sj-PyR" secondAttribute="bottomMargin" id="M5G-H3-ZTi"/>
-                            <constraint firstItem="6e3-OC-030" firstAttribute="top" secondItem="cfk-4f-rbd" secondAttribute="bottom" symbolic="YES" id="iT9-6f-6WR"/>
-                            <constraint firstItem="6e3-OC-030" firstAttribute="leading" secondItem="LM4-sj-PyR" secondAttribute="leadingMargin" id="rUH-pO-fEL"/>
+                            <constraint firstItem="aze-4N-b6Z" firstAttribute="trailing" secondItem="6o2-Z8-IBn" secondAttribute="trailing" constant="8" id="9qL-Bj-A0G"/>
+                            <constraint firstAttribute="bottom" secondItem="6e3-OC-030" secondAttribute="bottom" id="A9I-9o-Wab"/>
+                            <constraint firstItem="aze-4N-b6Z" firstAttribute="bottom" secondItem="6o2-Z8-IBn" secondAttribute="bottom" constant="8" id="UuE-lk-I3j"/>
+                            <constraint firstItem="6e3-OC-030" firstAttribute="top" secondItem="aze-4N-b6Z" secondAttribute="top" id="Vo8-Pz-kuf"/>
+                            <constraint firstItem="6e3-OC-030" firstAttribute="trailing" secondItem="aze-4N-b6Z" secondAttribute="trailing" id="db5-GV-sF8"/>
+                            <constraint firstItem="aze-4N-b6Z" firstAttribute="trailing" secondItem="9pu-dg-EAd" secondAttribute="trailing" constant="8" id="hsp-XX-L2g"/>
+                            <constraint firstItem="6o2-Z8-IBn" firstAttribute="top" secondItem="9pu-dg-EAd" secondAttribute="bottom" constant="8" id="uB3-ov-HWb"/>
+                            <constraint firstItem="6e3-OC-030" firstAttribute="leading" secondItem="aze-4N-b6Z" secondAttribute="leading" id="wSJ-j0-R7W"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aze-4N-b6Z"/>
                     </view>
@@ -249,10 +262,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HEf-JY-yjA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1710" y="112"/>
+            <point key="canvasLocation" x="1710" y="111.97183098591549"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="zk0-Or-vkv"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
+        <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
+    </resources>
 </document>

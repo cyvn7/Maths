@@ -30,7 +30,7 @@ class Score: UIViewController, MFMailComposeViewControllerDelegate {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func sendEmail(_ sender: UIBarButtonItem) {
+    @IBAction func sendEmailAct(_ sender: UIButton) {
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
@@ -43,6 +43,7 @@ class Score: UIViewController, MFMailComposeViewControllerDelegate {
             // show failure alert
         }
     }
+    
     
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true)
